@@ -1,0 +1,35 @@
+<!-- All users page -->
+<h2>All users list</h2>
+
+<ul>
+  <% @users.each do |user| %>
+  <li>
+    <%= user[:name] %>
+  </li>
+  <% end %>
+</ul>
+
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user[:id] %>
+      </td>
+      <td>
+        <%= user[:name] %>
+      </td>
+      <td>
+        <%= user[:email] %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table> -->
