@@ -1,12 +1,29 @@
 <h3>Form to create new user / Register Here!</h3>
 
 <form action="/users" method="post">
-  <label for="name">Name</label>
-  <input id = "name" type="text" name="user[name]" value="">
 
-  <label> Address
-    <input id = "address" type="text" name="user[address]" value="">
-  </label>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id = "name" type="text" name="user[name]" value="">
+  </div>
+
+  <div class="form-group">
+    <label> Email
+      <input id = "email" type="text" name="user[email]" value="">
+    </label>
+  </div>
+
+  <div class="form group">
+      <label> Address
+        <input type="text" name="user[address]">
+      </label>
+  </div>
+
+  <div class="form group">
+      <label> Password
+        <input type="password" name="user[password]">
+      </label>
+  </div>
 
   <input type="submit" value="Submit">
 </form>
