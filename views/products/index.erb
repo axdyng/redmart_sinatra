@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Product's Name</th>
+      <th>How it Looks</th>
       <!-- <th>Category</th>
       <th>Brand</th> -->
       <th>Description</th>
@@ -15,16 +16,29 @@
     <% @products.each do |product| %>
     <tr>
       <td> <%= product[:name] %> </td>
+      <td> <img src="<%= product[:url] %>"/></td>
       <td> <%= product[:description] %> </td>
-      <td> $ <%= product[:price] %> </td>
+      <td> $ <%= '%.2f'% product[:price] %> </td>
       <td>
         <!-- View & Edit -->
         <a href="/products/<%= product[:id] %>">View</a> |
         <a href="/products/<%= product[:id] %>/edit">Edit</a>
         <!-- Delete -->
-
+        <form action="/products/<%= product[:id] %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input id="button-delete" type="submit" value="Remove Item">
+        </form>
       </td>
     </tr>
     <% end %>
   </tbody>
+  <tfoot>
+    <tr valign="bottom">
+      <!-- Add new product button -->
+      <a href="/products/new">
+        <input type="button" class="button-primary" value="New Product">
+      </a>
+    </tr>
+  </tfoot>
+
 </table>

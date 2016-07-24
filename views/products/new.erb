@@ -1,0 +1,31 @@
+<h5>New Product</h5>
+
+<form action="/products" method="post">
+
+  <div class="row">
+    <div class="two columns">
+      <label for="productname">Product:</label>
+      <input id="productname" type="text" name="product[name]" placeholder="Name" required>
+    </div>
+
+    <div class="two columns">
+      <label for="price">Price (SGD):</label>
+      <input id="price" type="number" name="product[price]" placeholder="0.00" min="0" step="0.1" required="Please input the price">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="four columns">
+      <label for="imgURL">Image URL</label>
+      <input type="url" class="u-full-width" name="product[url]" placeholder="http://www.example.com">
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns">
+      <label for="desc">Description:</label>
+      <textarea id="desc" class="u-full-width" name="product[description]" placeholder="Item description here"></textarea>
+    </div>
+  </div>
+
+  <input type="submit" class="button-primary" value="Add New Product">
+</form>
