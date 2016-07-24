@@ -42,7 +42,23 @@ class RedMartSinatra < Sinatra::Base
   ##end of CREATE
 
   #UPDATE
+  put '/users/:id' do
 
+  end
+  #end of UPDATE
 
+  #DELETE
+  delete '/users/:id' do
+    @deleted_user = User.find(params[:id])
+    
+    if @deleted_user.destroy
+      #go to all users list
+      redirect("/users")
+    else
+      #throw an error
+      erb :"users/#{ @deleted_user.id }"
+    end
+
+  end
 
 end
