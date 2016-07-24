@@ -1,0 +1,16 @@
+<h4> <%= @product[:name] %> </h4>
+
+<table>
+  <thead>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Price</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <img src="<%= @product[:url] %>"/></td>
+      <td> <%= @product[:description] %> </td>
+      <td> $ <%= @product[:price] %> </td>
+    </tr>
+  </tbody>
+</table>

@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160722051456) do
   end
 
   create_table "products", force: :cascade do |t|
+    t.string   "url"
     t.string   "name",                                 null: false
     t.decimal  "price",       precision: 10, scale: 2, null: false
     t.text     "description",                          null: false

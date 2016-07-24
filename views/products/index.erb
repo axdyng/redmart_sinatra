@@ -1,0 +1,30 @@
+<h4>All products</h4>
+
+<table class="u-full-width">
+  <thead>
+    <tr>
+      <th>Product's Name</th>
+      <!-- <th>Category</th>
+      <th>Brand</th> -->
+      <th>Description</th>
+      <th>Price</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td> <%= product[:name] %> </td>
+      <td> <%= product[:description] %> </td>
+      <td> $ <%= product[:price] %> </td>
+      <td>
+        <!-- View & Edit -->
+        <a href="/products/<%= product[:id] %>">View</a> |
+        <a href="/products/<%= product[:id] %>/edit">Edit</a>
+        <!-- Delete -->
+
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
