@@ -1,28 +1,34 @@
-<h3>Register Here!</h3>
+<h5>User Registration</h5>
 
 <form action="/users" method="post">
 
-  <div class="form-group">
-    <input id = "name" type="text" name="user[name]" placeholder="Username">
+  <div class="row">
+    <div class="two columns">
+      <label for="name">Username:</label>
+      <input id="name" type="text" name="user[name]" placeholder="Username" required>
+    </div>
+
+    <div class="two columns">
+      <label for="password">Password:</label>
+      <input id="password" type="password" name="user[password]" placeholder="Password" required>
+    </div>
+
+    <div class="three columns">
+      <label for="email">Email:</label>
+      <input id="email" class="u-full-width" type="email" name="user[email]" placeholder="Email Address" required>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label>
-      <input type="text" name="user[email]" placeholder="Email Address">
-    </label>
+  <div class="row">
+    <div class="seven columns">
+      <label for="address">Address:</label>
+      <textarea id="address" class="u-full-width" type="text" name="user[address]">
+        example:
+        Blk 123 Hougang Ave 1
+        #11-111 S123456
+      </textarea>
+    </div>
   </div>
 
-  <div class="form group">
-      <label>
-        <input type="text" name="user[address]" placeholder="Address">
-      </label>
-  </div>
-
-  <div class="form group">
-      <label>
-        <input type="password" name="user[password]" placeholder="Password">
-      </label>
-  </div>
-
-  <input type="submit" value="Register">
+  <input class="button-primary" type="submit" value="Register">
 </form>

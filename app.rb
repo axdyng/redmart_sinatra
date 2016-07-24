@@ -4,7 +4,7 @@ class RedMartSinatra < Sinatra::Base
   end
 
   # RESTFUL RESOURCES, CREATE READ UPDATE DELETE
-  #READ
+  # - - - - - - - - - READ - - - - - - - - - #
   get '/users' do
     @users = User.all
     erb :'users/index'
@@ -20,11 +20,12 @@ class RedMartSinatra < Sinatra::Base
   end
 
   get "/users/:id/edit" do
+    @user = User.find(params[:id])
     erb :'users/edit'
   end
-  ##end of READ
+  # # # *************** END OF READ *************** # # #
 
-  #CREATE
+  # - - - - - - - - - CREATE - - - - - - - - - #
   post "/users" do
     puts params[:user]
 
@@ -39,18 +40,23 @@ class RedMartSinatra < Sinatra::Base
     end
 
   end
-  ##end of CREATE
+  # # # *************** END OF CREATE *************** # # #
 
-  #UPDATE
+  # - - - - - - - - - UPDATE - - - - - - - - - #
   put '/users/:id' do
+    @updated_user = User.find(params[:id])
 
+    if @updated_user.update_attributes(params[:user])
+      redirect('/users')
+    end
   end
-  #end of UPDATE
+  # # # *************** END OF UPDATE *************** # # #
 
-  #DELETE
+
+  # - - - - - - - - - DELETE - - - - - - - - - #
   delete '/users/:id' do
     @deleted_user = User.find(params[:id])
-    
+
     if @deleted_user.destroy
       #go to all users list
       redirect("/users")
@@ -60,5 +66,5 @@ class RedMartSinatra < Sinatra::Base
     end
 
   end
-
+  # # # *************** END OF DELETE *************** # # #
 end
